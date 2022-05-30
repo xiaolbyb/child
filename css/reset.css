@@ -1,0 +1,202 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+	-webkit-tap-highlight-color: transparent;
+}
+
+body {
+	line-height: 1.5;
+	color: #333;
+}
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+	display: block;
+}
+
+a {
+	text-decoration: none;
+	background-color: transparent;
+}
+
+
+a:not([href]):not([class]) {
+	color: inherit;
+	text-decoration: none;
+}
+
+a:not([href]):not([class]):hover {
+	color: inherit;
+	text-decoration: none;
+}
+
+img {
+	vertical-align: middle;
+	border: none;
+}
+
+svg {
+	overflow: hidden;
+	vertical-align: middle;
+}
+
+table {
+	border-collapse:collapse; 
+	border-spacing:0;
+}
+
+th {
+	text-align: inherit;
+	text-align: -webkit-match-parent;
+}
+
+button {
+	border-radius: 0;
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	outline: none;
+}
+
+button,
+input {
+	overflow: visible;
+}
+
+button,
+select {
+	text-transform: none;
+}
+
+[role="button"] {
+	cursor: pointer;
+}
+
+select {
+	word-wrap: normal;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+	-webkit-appearance: button;
+}
+
+button:not(:disabled),
+[type="button"]:not(:disabled),
+[type="reset"]:not(:disabled),
+[type="submit"]:not(:disabled) {
+	cursor: pointer;
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+	padding: 0;
+	border-style: none;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+	box-sizing: border-box;
+	padding: 0;
+}
+
+textarea {
+	overflow: auto;
+	resize: vertical;
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+	height: auto;
+}
+
+[type="search"] {
+	outline-offset: -2px;
+	-webkit-appearance: none;
+}
+
+[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+	font: inherit;
+	-webkit-appearance: button;
+}
+
+template {
+	display: none;
+}
+
+[hidden] {
+	display: none!important;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-weight: 500;
+	line-height: 1.2;
+}
+/* 修改复选框样式 */
+input[type="checkbox"]{
+	position: relative;
+	width: 5vw;
+	height: 5vw;
+	vertical-align: text-top;
+	background: #fff;
+	border: 1px solid #cbcbcb;
+	border-radius: .5vw;
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	-ms-appearance:none;
+	-o-appearance:none;
+	appearance:none;
+	outline: none;
+}
+input[type="checkbox"]:checked {
+	background: #fff url(../images/tick.png) no-repeat center;
+	background-size: 80%;
+}
+
+/* 修改输入框默认提示颜色 */
+
+input::-webkit-input-placeholder{
+	color:#c4c4c4;
+}
+input::-moz-placeholder{
+	color:#c4c4c4;
+}
+input:-moz-placeholder{
+	color:#c4c4c4;
+}
+input:-ms-input-placeholder{
+	color:#c4c4c4;
+}
+/* float布局清除浮动 */
+.clearfix:before,
+.clearfix:after{
+  display: table;
+  content: " ";
+}
+.clearfix:after{
+  clear: both;
+}
+/* 启用flex布局 */
+.box-flex{
+	display: flex;
+}

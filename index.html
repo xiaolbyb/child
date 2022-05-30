@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title></title>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/my.css" />
+  <link rel="stylesheet" href="css/swiper.css" />
+  <link rel="stylesheet" href="css/animate.css" />
+</head>
+
+<body>
+
+  <div id="app">
+    <div class="box" id="right" v-if="!show">
+      <div class="right">
+        戳玫瑰<img src="./images/2.png" alt="" @click="clickOne">哈哈
+      </div>
+    </div>
+
+    <div class="next" v-if="show">
+      <img class="img1" src="./images/2.png" alt="" @click="clickOne">
+      <img class="img2" src="./images/1.gif" alt="">
+      <div class="title">
+        “我在等风，也在等你”
+      </div>
+      <div class="center">
+        <div class="title2">
+          To: 高莉❤
+        </div>
+        <div class="content">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{content1}}
+        </div>
+        <div class="swiper footer" v-if="footer_show">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" v-for="(item,index) in videoList" :key="index">
+              <img :src="item" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/vue.js" type="text/javascript" charset="utf-8"></script>
+  <script src="./js/swiper.js" type="text/javascript" charset="utf-8"></script>
+  <script>
+    new Vue({
+      el: "#app",
+      data: {
+        show: false,
+        content: "遇见你是我最幸运的事，今天是六一啦，也是我们认识的第29天。祝福你要天天开心，烦恼散开。一片云代表一颗心，一滴雨代表一份情，依据诗代表一份爱，一句祝福代表永远的感激，你要永远保持一颗童心，在以后的日子里熠熠生辉噢。以后的日子，不要emo、难过、哭泣，不然我都会很心疼的。我想说的是，你的喜怒哀乐、任何的心情变化对我来说都很重要!我会珍惜你、爱护你、带你成长、给你分享我的快乐、忧伤。我只想给你独一无二的例外和偏爱。从我们认识的那一刻起，你注定是我世界里的一抹阳光，一点光芒都能给我带来希望和憧憬。儿童节啦，必须祝福我心中最大的小孩儿童节快乐呐!以下附上了你的帅气炫酷的照片，哈哈。",
+        content1: '',
+        videoList: [
+          './images/cacul/1.jpg',
+          './images/cacul/2.gif',
+        ],
+        footer_show: false
+      },
+      created() {},
+      mounted() {
+        // this.clickOne()
+
+      },
+      methods: {
+        clickOne() {
+          let dom = document.getElementById("right")
+          dom.classList.add("box2")
+          setTimeout(() => {
+            this.show = true
+            this.$nextTick(() => {
+              this.addText()
+            })
+          }, 2000)
+        },
+        cacusl() {
+          var mySwiperVideo = new Swiper('.swiper', {
+            loop: true, // 循环模式选项
+            autoplay: {
+              delay: 3000, // 自动切换时间间隔
+            },
+          })
+        },
+        addText() {
+          let time = setInterval(() => {
+            this.content1 += this.content.substring(0, 1)
+            this.content = this.content.replace(this.content.substring(0, 1), "")
+            if (this.content === "") {
+              clearInterval(time)
+              this.footer_show = true
+              this.$nextTick(() => {
+                this.cacusl()
+              })
+            }
+          }, 100)
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
